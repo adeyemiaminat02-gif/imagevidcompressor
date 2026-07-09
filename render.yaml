@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: image-vid-compressor-bot
+    runtime: python
+    buildCommand: apt-get update && apt-get install -y ffmpeg && pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: DATABASE_URL
+        value: bot_database.db
+      - key: MAX_IMAGE_SIZE
+        value: "26214400"
+      - key: MAX_VIDEO_SIZE
+        value: "262144000"

@@ -1,6 +1,13 @@
 import sys
 from telegram import Update
-from telegram.ext import Application, CommandHandler, MessageHandler, CallbackQueryHandler, filters
+from telegram.ext import (
+    Application, 
+    CommandHandler, 
+    MessageHandler, 
+    CallbackQueryHandler, 
+    filters, 
+    ContextTypes
+)
 
 from utils.config import BOT_TOKEN
 from utils.logger import logger
